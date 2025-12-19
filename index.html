@@ -461,30 +461,28 @@
                   <!-- Header nằm trên viền top -->
                   <div class="absolute -top-3 left-0 right-0 flex items-center justify-center">
                     <div class="flex-1 h-px bg-orange-400"></div>
-                    <h4 class="px-3 text-sm font-bold text-gray-700 uppercase tracking-widest bg-white">KEY POINTS</h4>
+                    <h4 class="px-3 font-bold text-gray-700 uppercase tracking-widest bg-white"
+                      style="font-size: 1.375rem;">KEY POINTS</h4>
                     <div class="flex-1 h-px bg-orange-400"></div>
                   </div>
                   <!-- Content với bullet đen nhỏ -->
                   <ul class="space-y-6 text-gray-700" id="key-points-list">
                     <li class="flex items-start gap-2">
                       <span class="text-gray-600 text-xs mt-1.5">•</span>
-                      <span class="text-base leading-relaxed">Cooking certain vegetables can boost key nutrients, making
+                      <span class="text-sm leading-relaxed">Cooking certain vegetables can boost key nutrients, making
                         them easier for your body to absorb and use.</span>
                     </li>
                     <li class="flex items-start gap-2">
                       <span class="text-gray-600 text-xs mt-1.5">•</span>
-                      <span class="text-base leading-relaxed">Tomatoes, carrots, and spaghetti squash release more
+                      <span class="text-sm leading-relaxed">Tomatoes, carrots, and spaghetti squash release more
                         antioxidants like lycopene and beta-carotene after being cooked.</span>
                     </li>
                     <li class="flex items-start gap-2">
                       <span class="text-gray-600 text-xs mt-1.5">•</span>
-                      <span class="text-base leading-relaxed">Cooking spinach and mushrooms reduces barriers to mineral
+                      <span class="text-sm leading-relaxed">Cooking spinach and mushrooms reduces barriers to mineral
                         absorption and increases antioxidants, fiber, and vitamin D availability.</span>
                     </li>
                   </ul>
-                  <!-- Read More Button -->
-                  <button id="read-more-btn"
-                    class="mt-4 text-orange-500 hover:text-orange-600 font-medium text-sm hidden">Read More...</button>
                 </div>
               </div>
 
@@ -1300,7 +1298,11 @@
                       through her
                       creative copywriting and storytelling. In her spare time, you will find her enjoying a classic
                       film
-                      with her family or appreciating a good book—with a cup of tea—by herself.</p>
+                      with her family or appreciating a good book—with a cup of tea—by herself. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                      fugiat nulla pariatur.</p>
                     <button id="readMoreBtn" class="text-sm main-color font-medium mt-2 hover:underline"
                       onclick="toggleAuthorBio()">... [Read More]</button>
                   </div>
@@ -1757,8 +1759,8 @@
   <style>
     .author-bio-collapsed {
       display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -1776,11 +1778,6 @@
     .bg-main-color {
       background-color: #f97316;
     }
-
-    /* Key Points - Show only 3 items initially */
-    #key-points-list.collapsed li:nth-child(n+4) {
-      display: none;
-    }
   </style>
   <script>
     function toggleAuthorBio() {
@@ -1796,32 +1793,6 @@
         btn.textContent = '... [Read More]';
       }
     }
-
-    // Key Points Read More functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const keyPointsList = document.getElementById('key-points-list');
-      const readMoreBtn = document.getElementById('read-more-btn');
-
-      if (keyPointsList && readMoreBtn) {
-        const items = keyPointsList.querySelectorAll('li');
-
-        // If more than 3 items, show Read More button and collapse list
-        if (items.length > 3) {
-          keyPointsList.classList.add('collapsed');
-          readMoreBtn.classList.remove('hidden');
-
-          readMoreBtn.addEventListener('click', function () {
-            if (keyPointsList.classList.contains('collapsed')) {
-              keyPointsList.classList.remove('collapsed');
-              readMoreBtn.textContent = 'Show Less';
-            } else {
-              keyPointsList.classList.add('collapsed');
-              readMoreBtn.textContent = 'Read More...';
-            }
-          });
-        }
-      }
-    });
   </script>
 
 </body>
